@@ -1,0 +1,53 @@
+export BESU_IDENTITY=${PEER_NAME}
+
+export BESU_NETWORK=MAINNET
+
+export BESU_NETWORK_ID=20221026
+
+export BESU_LOGGING=${LOGGING}
+
+export BESU_COLOR_ENABLED=${BESU_COLOR_ENABLED}
+
+export BESU_SYNC_MODE=FULL
+
+# 노드1 Node-1, 노드2 Node-2, 노드3 Node-3, 노드4 Node-4 각자 경로에 맞게 설정
+export BESU_DATA_PATH=/QBFT-Network/${NODE}/data
+
+export BESU_GENESIS_FILE=/QBFT-Network/genesis.json
+
+# 위에서 로그에 찍혔던 부트노드값들 여기에 설정 !!
+# 127.0.0.1 -> dns값인 peer1 또는 peer2로 설정
+export BESU_BOOTNODES=enode://3f5c57834d270db1761fe19ce10a882a9b56d9e5fb41b400d69e33b74fc4886237ca1438f04c2e5bd521a69fa12508fe4e7ce15e0471c093e19c7dd52e810cc4@node1:30303,enode://8b5f221187948938e200d4253b0ee0ed84f0bc7d0ef76cb3084fc5b86e5c3edc260a4ff71ce71800ed36afd8264652947a4b1389d711c14e37fe5ad5a2142558@node2:30304
+
+export BESU_RPC_HTTP_ENABLED=true
+
+export BESU_RPC_HTTP_HOST=0.0.0.0
+
+# 노드1 8545, 노드2 8546, 노드3 8547, 노드4 8548
+export BESU_RPC_HTTP_PORT=${HTTP_PORT}
+
+export BESU_RPC_HTTP_API=ETH,QBFT,NET,WEB3
+
+export BESU_HOST_ALLOWLIST="*"
+
+export BESU_RPC_HTTP_CORS_ORIGINS=all
+
+export BESU_RPC_TX_FEECAP=0
+ 
+export BESU_RPC_HTTP_MAX_ACTIVE_CONNECTIONS=500000
+
+export BESU_P2P_ENABLED=true 
+
+export BESU_P2P_HOST=0.0.0.0
+
+# 노드1 30303, 노드2 30304, 노드3 30305, 노드4 30306
+export BESU_P2P_PORT=${P2P_PORT}
+
+export BESU_P2P_INTERFACE=0.0.0.0
+
+export BESU_MIN_GAS_PRICE=0
+
+export BESU_MINER_ENABLED=true
+
+# 블로그에선 노드1 계정 설정하도록 진행
+export BESU_MINER_COINBASE=4e06c28d18f1d3432ddad156b6e5d853ccbab3b6
