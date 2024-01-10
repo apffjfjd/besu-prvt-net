@@ -1,0 +1,3 @@
+[submodule "chainlens-free"]
+	path = chainlens-free
+	url = https://github.com/web3labs/chainlens-free
