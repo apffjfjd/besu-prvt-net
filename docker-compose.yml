@@ -1,0 +1,75 @@
+version: "3"
+services:
+  node1:  
+    container_name: ${NODE1_PEER_NAME}
+    image: ${NODE_IMAGE}
+    environment:
+      PEER_NAME: ${NODE1_PEER_NAME}
+      LOGGING: ${LOGGING}
+      BESU_COLOR_ENABLED: ${BESU_COLOR_ENABLED}
+      NODE: ${NODE1_NODE}
+      HTTP_PORT: ${NODE1_HTTP_PORT}
+      P2P_PORT: ${NODE1_P2P_PORT}
+    entrypoint: ${COMMAND}
+    ports: 
+      - "${NODE1_HTTP_PORT}:${NODE1_HTTP_PORT}"
+    networks: 
+      - besu_prvt_net
+    volumes: ['./QBFT-Network/${NODE1_NODE}/data:/QBFT-Network/${NODE1_NODE}/data']
+    restart: always
+  node2:  
+    container_name: ${NODE2_PEER_NAME}
+    image: ${NODE_IMAGE}
+    environment:
+      PEER_NAME: ${NODE2_PEER_NAME}
+      LOGGING: ${LOGGING}
+      BESU_COLOR_ENABLED: ${BESU_COLOR_ENABLED}
+      NODE: ${NODE2_NODE}
+      HTTP_PORT: ${NODE2_HTTP_PORT}
+      P2P_PORT: ${NODE2_P2P_PORT}
+    entrypoint: ${COMMAND}
+    ports: 
+      - "${NODE2_HTTP_PORT}:${NODE2_HTTP_PORT}"
+    networks: 
+      - besu_prvt_net
+    volumes: ['./QBFT-Network/${NODE1_NODE}/data:/QBFT-Network/${NODE1_NODE}/data']
+    restart: always
+  node3:  
+    container_name: ${NODE3_PEER_NAME}
+    image: ${NODE_IMAGE}
+    environment:
+      PEER_NAME: ${NODE3_PEER_NAME}
+      LOGGING: ${LOGGING}
+      BESU_COLOR_ENABLED: ${BESU_COLOR_ENABLED}
+      NODE: ${NODE3_NODE}
+      HTTP_PORT: ${NODE3_HTTP_PORT}
+      P2P_PORT: ${NODE3_P2P_PORT}
+    entrypoint: ${COMMAND}
+    ports: 
+      - "${NODE3_HTTP_PORT}:${NODE3_HTTP_PORT}"
+    networks: 
+      - besu_prvt_net
+    volumes: ['./QBFT-Network/${NODE1_NODE}/data:/QBFT-Network/${NODE1_NODE}/data']
+    restart: always
+  node4:  
+    container_name: ${NODE4_PEER_NAME}
+    image: ${NODE_IMAGE}
+    environment:
+      PEER_NAME: ${NODE4_PEER_NAME}
+      LOGGING: ${LOGGING}
+      BESU_COLOR_ENABLED: ${BESU_COLOR_ENABLED}
+      NODE: ${NODE4_NODE}
+      HTTP_PORT: ${NODE4_HTTP_PORT}
+      P2P_PORT: ${NODE4_P2P_PORT}
+    entrypoint: ${COMMAND}
+    ports: 
+      - "${NODE4_HTTP_PORT}:${NODE4_HTTP_PORT}"
+    networks: 
+      - besu_prvt_net
+    volumes: ['./QBFT-Network/${NODE1_NODE}/data:/QBFT-Network/${NODE1_NODE}/data']
+    restart: always
+
+networks: 
+  besu_prvt_net: 
+    driver: bridge
+  
